@@ -7,30 +7,35 @@
  */
 
 import React from 'react';
+import {OnBoarding} from './src/screens';
 
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import routes from './src/routes';
+
+const Stack = createStackNavigator();
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    border: 'transparent',
+  },
+};
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text>test</Text>
-    </SafeAreaView>
+    <NavigationContainer theme={theme}>
+      <Stack.Navigator initialRouteName={routes.ON_BOARDING}>
+        <Stack.Screen
+          name={routes.ON_BOARDING}
+          component={OnBoarding}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

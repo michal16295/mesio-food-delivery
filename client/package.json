@@ -7,8 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint .",
-    "generate": "npx react-native generate-bootsplash ./src/assets/salver.png --background-color=1DBF73   --logo-width=100 --assets-path=./src/assets --flavor=main"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.14.1",
@@ -30,7 +29,6 @@
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.17.1",
-    "react-native-splash-screen": "^3.3.0",
     "react-native-svg": "^12.1.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5"
