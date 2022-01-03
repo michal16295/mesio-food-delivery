@@ -12,9 +12,9 @@ const OnBoarding = ({navigation}) => {
       <LinearGradient
         start={{x: 0.9, y: 0.3}}
         end={{x: 0.1, y: 1.0}}
-        colors={[COLORS.primary, COLORS.primary, COLORS.white]}
+        colors={[COLORS.primary, '#63DDA4', '#7DEFBA']}
         style={styles.text}>
-        <Text style={{...FONTS.h2, color: COLORS.white}}>Welcome to Mesio</Text>
+        <Text style={{...FONTS.h1, color: COLORS.white}}>Welcome to Mesio</Text>
         <Text
           style={{...FONTS.body2, textAlign: 'center', color: COLORS.white}}>
           Tasty takeaway from local restaurants delivered to your door. The food
