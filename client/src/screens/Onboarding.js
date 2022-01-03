@@ -1,27 +1,40 @@
 import React from 'react';
-import {View, Text, SafeAreaView, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {COLORS, SIZES, FONTS, images} from '../constants';
 import LinearGradient from 'react-native-linear-gradient';
-import {COLORS, SIZES, FONTS} from '../constants';
 
 const OnBoarding = ({navigation}) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <Image style={styles.image} source={images.welcome} />
+
       <LinearGradient
-        colors={['#84A4FC', '#A0B9FC', '#DFE8FF']}
-        style={styles.imageBack}></LinearGradient>
-      <View style={styles.text}>
-        <Text style={{...FONTS.h1}}>Welcome</Text>
-        <Text style={{...FONTS.body2, textAlign: 'center'}}>
-          Create a personalized video to educate your patient
+        start={{x: 0.9, y: 0.3}}
+        end={{x: 0.1, y: 1.0}}
+        colors={[COLORS.primary, COLORS.primary, COLORS.white]}
+        style={styles.text}>
+        <Text style={{...FONTS.h2, color: COLORS.white}}>Welcome to Mesio</Text>
+        <Text
+          style={{...FONTS.body2, textAlign: 'center', color: COLORS.white}}>
+          Tasty takeaway from local restaurants delivered to your door. The food
+          you really want is just a click away
         </Text>
-      </View>
-      <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => navigation.navigate('Procedures')}>
-        <Text style={{color: COLORS.primary}}>Start</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => navigation.navigate('Procedures')}>
+          <Text style={{...FONTS.button, color: COLORS.white}}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            ...styles.buttonContainer,
+            backgroundColor: 'rgba(255,255,255,0.25)',
+          }}
+          onPress={() => navigation.navigate('Procedures')}>
+          <Text style={{...FONTS.button, color: COLORS.white}}>Register</Text>
+        </TouchableOpacity>
+      </LinearGradient>
+    </View>
   );
 };
 export default OnBoarding;
@@ -33,38 +46,32 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
   },
-  imageBack: {
-    width: 284,
-    height: 292,
-    borderRadius: 15,
-    position: 'relative',
-    marginTop: 40,
+  image: {
+    flex: 1,
+    resizeMode: 'contain',
   },
   text: {
-    marginTop: 70,
-    width: SIZES.width * 0.8,
+    marginTop: -20,
+    width: SIZES.width,
     display: 'flex',
     alignItems: 'center',
     textAlign: 'center',
+    backgroundColor: COLORS.primary,
+    color: COLORS.white,
+    paddingHorizontal: 30,
+    paddingTop: 30,
+    flex: 1,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
   buttonContainer: {
     display: 'flex',
     alignItems: 'center',
-  },
-  button: {
-    height: 85,
-    width: 85,
-    borderRadius: 50,
-    backgroundColor: COLORS.primary,
-    marginTop: 30,
-    marginBottom: 10,
-    display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-    elevation: 6,
+    borderRadius: 8,
+    backgroundColor: COLORS.yellow,
+    width: SIZES.width * 0.8,
+    height: 50,
+    marginTop: 20,
   },
 });

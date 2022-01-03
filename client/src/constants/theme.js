@@ -56,7 +56,7 @@ export const FONTS = {
   body2: {
     fontFamily: 'Roboto-Regular',
     fontSize: SIZES.body2,
-    lineHeight: 30,
+    lineHeight: 24,
   },
   body3: {
     fontFamily: 'Roboto-Bold',
@@ -77,6 +77,11 @@ export const FONTS = {
     fontFamily: 'Roboto-Regular',
     fontSize: SIZES.body5,
     lineHeight: 22,
+  },
+  button: {
+    fontFamily: 'Roboto-Medium',
+    fontSize: 18,
+    lineHeight: 27,
   },
 };
 
