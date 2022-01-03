@@ -17,8 +17,7 @@ const OnBoarding = ({navigation}) => {
         <Text style={{...FONTS.h1, color: COLORS.white}}>Welcome to Mesio</Text>
         <Text
           style={{...FONTS.body2, textAlign: 'center', color: COLORS.white}}>
-          Tasty takeaway from local restaurants delivered to your door. The food
-          you really want is just a click away
+          Tasty takeaway from local restaurants delivered to your door.
         </Text>
         <TouchableOpacity
           style={styles.buttonContainer}
