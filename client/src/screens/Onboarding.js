@@ -4,6 +4,8 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, SIZES, FONTS, images} from '../constants';
 import LinearGradient from 'react-native-linear-gradient';
 
+import routes from '../routes';
+
 const OnBoarding = ({navigation}) => {
   return (
     <View style={styles.container}>
@@ -21,7 +23,7 @@ const OnBoarding = ({navigation}) => {
         </Text>
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => navigation.navigate('Procedures')}>
+          onPress={() => navigation.navigate(routes.LOGIN)}>
           <Text style={{...FONTS.button, color: COLORS.white}}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity

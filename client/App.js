@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {OnBoarding} from './src/screens';
+import {OnBoarding, Login} from './src/screens';
 
 import {StyleSheet} from 'react-native';
 
@@ -32,6 +32,11 @@ const App = () => {
         <Stack.Screen
           name={routes.ON_BOARDING}
           component={OnBoarding}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={routes.LOGIN}
+          component={Login}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
