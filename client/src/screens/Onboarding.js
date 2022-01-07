@@ -4,6 +4,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, SIZES, FONTS, images} from '../constants';
 import LinearGradient from 'react-native-linear-gradient';
 
+import {Button} from '../components/Form';
 import routes from '../routes';
 
 const OnBoarding = ({navigation}) => {
@@ -21,19 +22,16 @@ const OnBoarding = ({navigation}) => {
           style={{...FONTS.body2, textAlign: 'center', color: COLORS.white}}>
           Tasty takeaway from local restaurants delivered to your door.
         </Text>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => navigation.navigate(routes.LOGIN)}>
-          <Text style={{...FONTS.button, color: COLORS.white}}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            ...styles.buttonContainer,
-            backgroundColor: 'rgba(255,255,255,0.25)',
-          }}
-          onPress={() => navigation.navigate(routes.REGISTER)}>
-          <Text style={{...FONTS.button, color: COLORS.white}}>Register</Text>
-        </TouchableOpacity>
+        <Button
+          color={COLORS.yellow}
+          handleClick={() => navigation.navigate(routes.LOGIN)}
+          text="Login"
+        />
+        <Button
+          color="rgba(255,255,255,0.25)"
+          handleClick={() => navigation.navigate(routes.REGISTER)}
+          text="Register"
+        />
       </LinearGradient>
     </View>
   );

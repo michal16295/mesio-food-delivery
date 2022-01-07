@@ -11,6 +11,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, SIZES, FONTS, images} from '../constants';
 
 import routes from '../routes';
+import {Button} from '../components/Form';
 
 const Login = ({navigation}) => {
   const [formData, setFormData] = useState({
@@ -67,9 +68,7 @@ const Login = ({navigation}) => {
 
           <Text style={{color: COLORS.yellow}}>Forgot password?</Text>
         </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={{...FONTS.body1, color: COLORS.white}}>Sign in</Text>
-        </TouchableOpacity>
+        <Button text="Sign in" color={COLORS.primary} />
       </View>
 
       <Text>

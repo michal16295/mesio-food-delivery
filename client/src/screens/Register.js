@@ -11,6 +11,7 @@ import Toast from 'react-native-toast-message';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {COLORS, SIZES, FONTS, images} from '../constants';
+import {Button} from '../components/Form';
 import routes from '../routes';
 import {
   passwordsMatch,
@@ -124,10 +125,11 @@ const Register = ({navigation}) => {
             Policy
           </Text>
         </View>
-
-        <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-          <Text style={{...FONTS.body1, color: COLORS.white}}>Sign up</Text>
-        </TouchableOpacity>
+        <Button
+          text="Sign up"
+          color={COLORS.primary}
+          handleClick={handleSubmit}
+        />
       </View>
 
       <Text>
