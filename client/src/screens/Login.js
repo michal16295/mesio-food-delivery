@@ -1,17 +1,10 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-} from 'react-native';
+import {View, Text, Image, StyleSheet, SafeAreaView} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, SIZES, FONTS, images} from '../constants';
 
 import routes from '../routes';
-import {Button} from '../components/Form';
+import {Button, Input} from '../components/Form';
 
 const Login = ({navigation}) => {
   const [formData, setFormData] = useState({
@@ -33,29 +26,24 @@ const Login = ({navigation}) => {
       <View style={styles.inner}>
         <Text style={{...FONTS.h1, color: COLORS.primary}}>Login</Text>
         <Text style={{...FONTS.body2}}>Sign in to continue</Text>
-        <View style={{...FONTS.body1, ...styles.inputView}}>
-          <View style={{flex: 0.15}}>
-            <Image source={images.email} />
-          </View>
-          <TextInput
-            style={styles.input}
-            placeholder="johndoe@mail.com"
-            value={formData.email}
-            onChangeText={text => handleChange('email', text)}
-          />
-        </View>
-        <View style={{...FONTS.body1, ...styles.inputView}}>
-          <View style={{flex: 0.15}}>
-            <Image source={images.lock} />
-          </View>
-          <TextInput
-            style={styles.input}
-            placeholder="*********"
-            value={formData.password}
-            secureTextEntry={true}
-            onChangeText={text => handleChange('password', text)}
-          />
-        </View>
+
+        <Input
+          placeholder="johndoe@mail.com"
+          val={formData.email}
+          func={handleChange}
+          title="email"
+          icon={images.email}
+        />
+
+        <Input
+          placeholder="********"
+          val={formData.password}
+          func={handleChange}
+          title="password"
+          icon={images.lock}
+          secure={true}
+        />
+
         <View style={styles.row}>
           <View style={{display: 'flex', flexDirection: 'row'}}>
             <TouchableOpacity

@@ -11,7 +11,7 @@ import Toast from 'react-native-toast-message';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {COLORS, SIZES, FONTS, images} from '../constants';
-import {Button} from '../components/Form';
+import {Button, Input} from '../components/Form';
 import routes from '../routes';
 import {
   passwordsMatch,
@@ -71,48 +71,43 @@ const Register = ({navigation}) => {
         <TouchableOpacity style={styles.camera}>
           <Image source={images.camera} />
         </TouchableOpacity>
-        <View style={{...FONTS.body1, ...styles.inputView}}>
-          <TextInput
-            style={styles.input}
-            placeholder="Email"
-            value={formData.email}
-            onChangeText={text => handleChange('email', text)}
-          />
-        </View>
-        <View style={{...FONTS.body1, ...styles.inputView}}>
-          <TextInput
-            style={styles.input}
-            placeholder="Full Name"
-            value={formData.name}
-            onChangeText={text => handleChange('name', text)}
-          />
-        </View>
-        <View style={{...FONTS.body1, ...styles.inputView}}>
-          <TextInput
-            style={styles.input}
-            placeholder="Phone"
-            value={formData.phone}
-            onChangeText={text => handleChange('phone', text)}
-          />
-        </View>
-        <View style={{...FONTS.body1, ...styles.inputView}}>
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            value={formData.password}
-            secureTextEntry={true}
-            onChangeText={text => handleChange('password', text)}
-          />
-        </View>
-        <View style={{...FONTS.body1, ...styles.inputView}}>
-          <TextInput
-            style={styles.input}
-            placeholder="Confirm Password"
-            value={formData.secondPassword}
-            secureTextEntry={true}
-            onChangeText={text => handleChange('secondPassword', text)}
-          />
-        </View>
+
+        <Input
+          placeholder="Email"
+          val={formData.email}
+          func={handleChange}
+          title="email"
+        />
+
+        <Input
+          placeholder="Full Name"
+          val={formData.name}
+          func={handleChange}
+          title="name"
+        />
+
+        <Input
+          placeholder="Phone"
+          val={formData.phone}
+          func={handleChange}
+          title="phone"
+        />
+
+        <Input
+          placeholder="Password"
+          val={formData.password}
+          func={handleChange}
+          title="password"
+          secure={true}
+        />
+
+        <Input
+          placeholder="Confirm Password"
+          val={formData.secondPassword}
+          func={handleChange}
+          title="secondPassword"
+          secure={true}
+        />
 
         <View style={styles.row}>
           <TouchableOpacity
