@@ -12,13 +12,16 @@ import {COLORS, SIZES, FONTS, images} from '../constants';
 
 import routes from '../routes';
 
-const Login = ({navigation}) => {
+const Register = ({navigation}) => {
   const [formData, setFormData] = useState({
     email: null,
     password: null,
+    name: null,
+    phone: null,
+    secondPassword: null,
   });
 
-  const [rememberMe, setRememberMe] = useState(false);
+  const [tos, setTos] = useState(false);
 
   const handleChange = (k, val) => {
     setFormData({
@@ -30,60 +33,81 @@ const Login = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
-        <Text style={{...FONTS.h1, color: COLORS.primary}}>Login</Text>
-        <Text style={{...FONTS.body2}}>Sign in to continue</Text>
+        <View style={styles.camera}>
+          <Image source={images.camera} />
+        </View>
         <View style={{...FONTS.body1, ...styles.inputView}}>
-          <View style={{flex: 0.15}}>
-            <Image source={images.email} />
-          </View>
           <TextInput
             style={styles.input}
-            placeholder="johndoe@mail.com"
+            placeholder="Email"
             value={formData.email}
             onChangeText={text => handleChange('email', text)}
           />
         </View>
         <View style={{...FONTS.body1, ...styles.inputView}}>
-          <View style={{flex: 0.15}}>
-            <Image source={images.lock} />
-          </View>
           <TextInput
             style={styles.input}
-            placeholder="*********"
+            placeholder="Full Name"
+            value={formData.name}
+            onChangeText={text => handleChange('name', text)}
+          />
+        </View>
+        <View style={{...FONTS.body1, ...styles.inputView}}>
+          <TextInput
+            style={styles.input}
+            placeholder="Phone"
+            value={formData.phone}
+            onChangeText={text => handleChange('phone', text)}
+          />
+        </View>
+        <View style={{...FONTS.body1, ...styles.inputView}}>
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
             value={formData.password}
             secureTextEntry={true}
             onChangeText={text => handleChange('password', text)}
           />
         </View>
-        <View style={styles.row}>
-          <View style={{display: 'flex', flexDirection: 'row'}}>
-            <TouchableOpacity
-              onPress={() => setRememberMe(prev => !prev)}
-              style={styles.checkBox}>
-              {rememberMe && <Image source={images.v} />}
-            </TouchableOpacity>
-            <Text>Remember me</Text>
-          </View>
-
-          <Text style={{color: COLORS.yellow}}>Forgot password?</Text>
+        <View style={{...FONTS.body1, ...styles.inputView}}>
+          <TextInput
+            style={styles.input}
+            placeholder="Confirm Password"
+            value={formData.secondPassword}
+            secureTextEntry={true}
+            onChangeText={text => handleChange('secondPassword', text)}
+          />
         </View>
+
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => setTos(prev => !prev)}
+            style={styles.checkBox}>
+            {tos && <Image source={images.v} />}
+          </TouchableOpacity>
+          <Text>
+            By creating an account you agree to our Terms of Use and Privacy
+            Policy
+          </Text>
+        </View>
+
         <TouchableOpacity style={styles.button}>
-          <Text style={{...FONTS.body1, color: COLORS.white}}>Sign in</Text>
+          <Text style={{...FONTS.body1, color: COLORS.white}}>Sign up</Text>
         </TouchableOpacity>
       </View>
 
       <Text>
-        Don't have an account yet?{' '}
+        Already have an account?{' '}
         <Text
-          onPress={() => navigation.navigate(routes.REGISTER)}
+          onPress={() => navigation.navigate(routes.LOGIN)}
           style={{...FONTS.caption2, color: COLORS.primary}}>
-          Sign Up
+          Sign In
         </Text>
       </Text>
     </SafeAreaView>
   );
 };
-export default Login;
+export default Register;
 
 const styles = StyleSheet.create({
   container: {
@@ -109,12 +133,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 3,
-    marginRight: 3,
+    marginRight: 5,
   },
   row: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
     width: SIZES.width * 0.75,
     margin: 15,
   },
@@ -147,5 +170,16 @@ const styles = StyleSheet.create({
 
   input: {
     flex: 1,
+  },
+
+  camera: {
+    borderRadius: 50,
+    width: 99,
+    height: 99,
+    backgroundColor: COLORS.lightGray,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

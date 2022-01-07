@@ -1,7 +1,8 @@
 const routes = {
-  HOME: 'home',
-  ON_BOARDING: 'onBoarding',
-  LOGIN: 'login',
+  HOME: 'Home',
+  ON_BOARDING: 'Welcome',
+  LOGIN: 'Login',
+  REGISTER: 'Register',
 };
 
 export default routes;

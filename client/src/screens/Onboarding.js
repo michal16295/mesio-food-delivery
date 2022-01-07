@@ -31,7 +31,7 @@ const OnBoarding = ({navigation}) => {
             ...styles.buttonContainer,
             backgroundColor: 'rgba(255,255,255,0.25)',
           }}
-          onPress={() => navigation.navigate('Procedures')}>
+          onPress={() => navigation.navigate(routes.REGISTER)}>
           <Text style={{...FONTS.button, color: COLORS.white}}>Register</Text>
         </TouchableOpacity>
       </LinearGradient>

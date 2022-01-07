@@ -7,12 +7,14 @@
  */
 
 import React from 'react';
-import {OnBoarding, Login} from './src/screens';
+import {OnBoarding, Login, Register} from './src/screens';
 
 import {StyleSheet} from 'react-native';
 
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+
+import {COLORS} from './src/constants';
 
 import routes from './src/routes';
 
@@ -38,6 +40,15 @@ const App = () => {
           name={routes.LOGIN}
           component={Login}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={routes.REGISTER}
+          component={Register}
+          options={{
+            title: 'Sign Up',
+            headerTintColor: COLORS.black,
+            headerBackTitle: true,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
