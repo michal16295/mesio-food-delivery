@@ -17,7 +17,7 @@
     "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
     "@babel/preset-env": "^7.15.6",
-    "@babel/register": "^7.15.3",
+    "@babel/register": "^7.16.7",
     "axios": "^0.23.0",
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
