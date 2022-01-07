@@ -7,10 +7,16 @@ import {
   SafeAreaView,
   TextInput,
 } from 'react-native';
+import Toast from 'react-native-toast-message';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {COLORS, SIZES, FONTS, images} from '../constants';
 
+import {COLORS, SIZES, FONTS, images} from '../constants';
 import routes from '../routes';
+import {
+  passwordsMatch,
+  emptyField,
+  passwordValidationLength,
+} from '../helpers/validations';
 
 const Register = ({navigation}) => {
   const [formData, setFormData] = useState({
@@ -30,12 +36,38 @@ const Register = ({navigation}) => {
     });
   };
 
+  const handleSubmit = () => {
+    if (passwordValidationLength(formData.password)) {
+      Toast.show({
+        type: 'error',
+        text1: 'Passwords should be 8 characters long',
+      });
+      return;
+    }
+
+    if (!passwordsMatch(formData.password, formData.secondPassword)) {
+      Toast.show({
+        type: 'error',
+        text1: 'Passwords do not match',
+      });
+      return;
+    }
+
+    if (emptyField(formData)) {
+      Toast.show({
+        type: 'error',
+        text1: 'All feilds must be filled',
+      });
+      return;
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
-        <View style={styles.camera}>
+        <TouchableOpacity style={styles.camera}>
           <Image source={images.camera} />
-        </View>
+        </TouchableOpacity>
         <View style={{...FONTS.body1, ...styles.inputView}}>
           <TextInput
             style={styles.input}
@@ -91,7 +123,7 @@ const Register = ({navigation}) => {
           </Text>
         </View>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress={handleSubmit} style={styles.button}>
           <Text style={{...FONTS.body1, color: COLORS.white}}>Sign up</Text>
         </TouchableOpacity>
       </View>
@@ -181,5 +213,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 10,
   },
 });
