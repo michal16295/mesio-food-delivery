@@ -46,40 +46,40 @@ export const SIZES = {
 };
 
 export const FONTS = {
-  h1: {fontFamily: 'Roboto-Bold', fontSize: SIZES.h1, lineHeight: 34},
-  h2: {fontFamily: 'Roboto-Bold', fontSize: SIZES.h2, lineHeight: 30},
+  h1: {fontFamily: 'Poppins-Bold', fontSize: SIZES.h1, lineHeight: 34},
+  h2: {fontFamily: 'Poppins-Bold', fontSize: SIZES.h2, lineHeight: 30},
   body1: {
-    fontFamily: 'Roboto-Bold',
+    fontFamily: 'Poppins-Bold',
     fontSize: SIZES.body1,
     lineHeight: 36,
   },
   body2: {
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Regular',
     fontSize: SIZES.body2,
     lineHeight: 24,
   },
   body3: {
-    fontFamily: 'Roboto-Bold',
+    fontFamily: 'Poppins-Bold',
     fontSize: SIZES.body3,
     lineHeight: 22,
   },
   body4: {
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Regular',
     fontSize: SIZES.body4,
     lineHeight: 22,
   },
   caption1: {
-    fontFamily: 'Roboto-Bold',
+    fontFamily: 'Poppins-Bold',
     fontSize: SIZES.body5,
     lineHeight: 22,
   },
   caption2: {
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Regular',
     fontSize: SIZES.body5,
     lineHeight: 22,
   },
   button: {
-    fontFamily: 'Roboto-Medium',
+    fontFamily: 'Poppins-Medium',
     fontSize: 18,
     lineHeight: 27,
   },
