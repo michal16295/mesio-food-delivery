@@ -27,7 +27,7 @@ const Register = ({navigation}) => {
     secondPassword: null,
   });
 
-  const [tos, setTos] = useState(false);
+  const [tos, setTos] = useState(true);
 
   const handleChange = (k, val) => {
     setFormData({
@@ -37,10 +37,12 @@ const Register = ({navigation}) => {
   };
 
   const handleSubmit = () => {
+    setTos(true);
+
     if (passwordValidationLength(formData.password)) {
       Toast.show({
         type: 'error',
-        text1: 'Passwords should be 8 characters long',
+        text1: 'Password should be 8 characters long',
       });
       return;
     }

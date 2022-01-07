@@ -7,10 +7,11 @@
  */
 
 import React from 'react';
-import {StyleSheet} from 'react-native';
 import Toast from 'react-native-toast-message';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {Provider} from 'react-redux';
+import store from './src/store';
 
 import {COLORS} from './src/constants';
 import {OnBoarding, Login, Register} from './src/screens';
@@ -27,7 +28,7 @@ const theme = {
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <NavigationContainer theme={theme}>
         <Stack.Navigator initialRouteName={routes.ON_BOARDING}>
           <Stack.Screen
@@ -52,7 +53,7 @@ const App = () => {
         </Stack.Navigator>
       </NavigationContainer>
       <Toast />
-    </>
+    </Provider>
   );
 };
 

@@ -11,4 +11,5 @@ export const emptyField = obj => {
   return res;
 };
 
-export const passwordValidationLength = password => password.length < 8;
+export const passwordValidationLength = password =>
+  password === null || password?.length < 8;
