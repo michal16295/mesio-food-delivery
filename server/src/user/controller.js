@@ -1,4 +1,5 @@
 const userServices = require("./service");
+const logger = require("../common/logger")(__filename);
 
 module.exports.login = async (req, res, next) => {
   const data = req.body;

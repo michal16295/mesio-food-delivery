@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Cookies from 'js-cookie';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import globalConstants from '../constants/globalConstants';

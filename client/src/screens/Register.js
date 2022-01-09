@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-} from 'react-native';
+import {View, Text, Image, StyleSheet, SafeAreaView} from 'react-native';
 import Toast from 'react-native-toast-message';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useDispatch} from 'react-redux';
 
 import {COLORS, SIZES, FONTS, images} from '../constants';
 import {Button, Input, CheckBox} from '../components/Form';
@@ -18,6 +12,7 @@ import {
   emptyField,
   passwordValidationLength,
 } from '../helpers/validations';
+import {register} from '../store/user';
 
 const Register = ({navigation}) => {
   const [formData, setFormData] = useState({
@@ -29,6 +24,8 @@ const Register = ({navigation}) => {
   });
 
   const [tos, setTos] = useState(true);
+
+  const dispatch = useDispatch();
 
   const handleChange = (k, val) => {
     setFormData({
@@ -63,6 +60,8 @@ const Register = ({navigation}) => {
       });
       return;
     }
+
+    dispatch(register(formData));
   };
 
   return (

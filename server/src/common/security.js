@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const config = require("../config/eyes.json");
+const config = require("../config/config.json");
 const UrlPattern = require("url-pattern");
 
 // This will sign with data and key from config and return the JWT

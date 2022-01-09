@@ -3,6 +3,8 @@ const {
   responseSuccess,
   SERVER_ERROR,
 } = require("../common/response");
+
+const logger = require("../common/logger")(__filename);
 const security = require("../common/security");
 const model = require("../models");
 const { sequelize, User } = model;
@@ -29,7 +31,7 @@ module.exports.register = async (data) => {
   } catch (e) {
     // Catch error and log it
     logger.error(e.message);
-    return responseError(500, SERVER_ERROR);
+    return responseError(500, e.message);
   }
   return responseSuccess(response);
 };

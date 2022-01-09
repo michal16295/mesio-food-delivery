@@ -1,5 +1,5 @@
 const path = require("path");
-const user = require("../user/route");
+const user = require("../user/routes");
 
 // This configs all routes
 module.exports = function (app) {

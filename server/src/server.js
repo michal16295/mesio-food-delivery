@@ -8,7 +8,7 @@ logger.info("Starting server...");
 
 configMiddleware.configure(app);
 
-require("./startup/routes")(app);
+require("./start/routes")(app);
 
 const PORT = config.port;
 
