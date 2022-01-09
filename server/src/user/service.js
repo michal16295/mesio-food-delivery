@@ -17,3 +17,19 @@ module.exports.login = async (data) => {
     return responseError(500, SERVER_ERROR);
   }
 };
+
+module.exports.register = async (data) => {
+  logger.info("Register - email: " + data.email);
+  let response = {};
+  try {
+    data.password = await security.crypt(data.password);
+    data.email = data.email.toLowerCase();
+    user = await User.create(data);
+    response = { userId: user.id };
+  } catch (e) {
+    // Catch error and log it
+    logger.error(e.message);
+    return responseError(500, SERVER_ERROR);
+  }
+  return responseSuccess(response);
+};

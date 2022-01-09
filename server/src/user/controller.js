@@ -11,3 +11,10 @@ module.exports.login = async (req, res, next) => {
     res.send({ jwt, user });
   }
 };
+
+module.exports.register = async (req, res, next) => {
+  logger.info("register service");
+  const data = req.body;
+  let response = await userServices.register(data);
+  res.status(response.status).send(response.data);
+};
