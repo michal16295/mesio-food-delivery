@@ -5,7 +5,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useDispatch} from 'react-redux';
 
 import {COLORS, SIZES, FONTS, images} from '../constants';
-import {Button, Input, CheckBox} from '../components/Form';
+import {Button, Input, CheckBox, ImageUploader} from '../components/Form';
 import routes from '../routes';
 import {
   passwordsMatch,
@@ -67,9 +67,7 @@ const Register = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
-        <TouchableOpacity style={styles.camera}>
-          <Image source={images.camera} />
-        </TouchableOpacity>
+        <ImageUploader />
 
         <Input
           placeholder="Email"

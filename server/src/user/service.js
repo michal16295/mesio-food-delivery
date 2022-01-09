@@ -3,7 +3,7 @@ const {
   responseSuccess,
   SERVER_ERROR,
 } = require("../common/response");
-
+const { uploadFile } = require("../common/images");
 const logger = require("../common/logger")(__filename);
 const security = require("../common/security");
 const model = require("../models");
@@ -32,6 +32,30 @@ module.exports.register = async (data) => {
     // Catch error and log it
     logger.error(e.message);
     return responseError(500, e.message);
+  }
+  return responseSuccess(response);
+};
+
+module.exports.uploadImage = async (userId, file) => {
+  logger.info(`upload profile image - userId: ${userId}`);
+  let response;
+  try {
+    let user = await User.findByPk(userId);
+    if (!user) {
+      logger.warn("User not found");
+      return responseError(404, "User not found");
+    }
+
+    //upload new image
+    const imageData = await uploadFile(file);
+    if (!imageData) {
+      logger.warn("Can't upload image");
+      return responseError(400, "Can't upload image");
+    }
+    await User.update({ avatar: imageData }, { where: { id: userId } });
+  } catch (e) {
+    logger.error(e.message);
+    return responseError(500, SERVER_ERROR);
   }
   return responseSuccess(response);
 };

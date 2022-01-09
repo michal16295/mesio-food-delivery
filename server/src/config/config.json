@@ -1,6 +1,7 @@
 {
   "port": 8080,
   "jwtPrivateKey": "dsjvndsjvdsnvkjdsnnvsdkv",
+  "Client_ID": "352763943198558",
   "development": {
     "username": "postgres",
     "password": "5210521",
