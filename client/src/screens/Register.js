@@ -11,7 +11,7 @@ import Toast from 'react-native-toast-message';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {COLORS, SIZES, FONTS, images} from '../constants';
-import {Button, Input} from '../components/Form';
+import {Button, Input, CheckBox} from '../components/Form';
 import routes from '../routes';
 import {
   passwordsMatch,
@@ -108,18 +108,15 @@ const Register = ({navigation}) => {
           title="secondPassword"
           secure={true}
         />
-
-        <View style={styles.row}>
-          <TouchableOpacity
-            onPress={() => setTos(prev => !prev)}
-            style={styles.checkBox}>
-            {tos && <Image source={images.v} />}
-          </TouchableOpacity>
-          <Text>
-            By creating an account you agree to our Terms of Use and Privacy
-            Policy
-          </Text>
+        <View style={{width: SIZES.width * 0.75, margin: 15}}>
+          <CheckBox
+            handlePress={() => setTos(prev => !prev)}
+            text="By creating an account you agree to our Terms of Use and Privacy
+            Policy"
+            display={tos}
+          />
         </View>
+
         <Button
           text="Sign up"
           color={COLORS.primary}
@@ -153,53 +150,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
-  },
-  checkBox: {
-    backgroundColor: COLORS.primary,
-    height: 16,
-    width: 16,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 3,
-    marginRight: 5,
-  },
-  row: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: SIZES.width * 0.75,
-    margin: 15,
-  },
-  button: {
-    backgroundColor: COLORS.primary,
-    borderRadius: 10,
-    width: SIZES.width * 0.8,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 5,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    elevation: 3,
-  },
-
-  inputView: {
-    margin: 10,
-    borderRadius: 10,
-    width: SIZES.width * 0.8,
-    backgroundColor: COLORS.lightGray,
-    padding: 13,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
-
-  input: {
     flex: 1,
   },
 
