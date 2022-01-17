@@ -12,6 +12,7 @@ target 'client' do
     :hermes_enabled => false
   )
 
+
   target 'clientTests' do
     inherit! :complete
     # Pods for testing

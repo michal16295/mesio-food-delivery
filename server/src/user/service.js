@@ -3,7 +3,7 @@ const {
   responseSuccess,
   SERVER_ERROR,
 } = require("../common/response");
-const { uploadFile } = require("../common/images");
+const { uploadFile } = require("../common/images.js");
 const logger = require("../common/logger")(__filename);
 const security = require("../common/security");
 const model = require("../models");
@@ -24,9 +24,13 @@ module.exports.register = async (data) => {
   logger.info("Register - email: " + data.email);
   let response = {};
   try {
+    const avatar = data.avatar;
+    delete data.avatar;
     data.password = await security.crypt(data.password);
     data.email = data.email.toLowerCase();
     user = await User.create(data);
+
+    this.uploadImage(user.dataValues.id, avatar);
     response = { userId: user.id };
   } catch (e) {
     // Catch error and log it
@@ -47,7 +51,9 @@ module.exports.uploadImage = async (userId, file) => {
     }
 
     //upload new image
+    console.log(file);
     const imageData = await uploadFile(file);
+    console.log({ imageData: imageData });
     if (!imageData) {
       logger.warn("Can't upload image");
       return responseError(400, "Can't upload image");

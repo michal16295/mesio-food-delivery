@@ -5,17 +5,13 @@ import * as ImagePicker from 'react-native-image-picker';
 
 import {COLORS, images} from '../../constants';
 
-const createFormData = (photo, body = {}) => {
+const createFormData = photo => {
   const data = new FormData();
 
   data.append('photo', {
     name: photo.fileName,
     type: photo.type,
-    uri: photo.uri,
-  });
-
-  Object.keys(body).forEach(key => {
-    data.append(key, body[key]);
+    uri: Platform.OS === 'ios' ? photo.uri.replace('file://', '') : photo.uri,
   });
 
   return data;
@@ -23,6 +19,12 @@ const createFormData = (photo, body = {}) => {
 
 const ImageUploader = ({handlePress}) => {
   const [pickerResponse, setPickerResponse] = useState(null);
+
+  useEffect(() => {
+    if (pickerResponse && pickerResponse.assets) {
+      handlePress(createFormData(pickerResponse.assets[0]));
+    }
+  }, [pickerResponse]);
 
   const onImageLibraryPress = useCallback(() => {
     const options = {

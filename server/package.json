@@ -20,6 +20,7 @@
     "@babel/register": "^7.16.7",
     "axios": "^0.23.0",
     "bcrypt": "^5.0.1",
+    "cloudinary": "^1.28.1",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",

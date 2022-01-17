@@ -64,10 +64,14 @@ const Register = ({navigation}) => {
     dispatch(register(formData));
   };
 
+  const getAvatar = val => {
+    setFormData({...formData, avatar: val});
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
-        <ImageUploader />
+        <ImageUploader handlePress={getAvatar} />
 
         <Input
           placeholder="Email"

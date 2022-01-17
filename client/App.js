@@ -16,6 +16,7 @@ import store from './src/store';
 import {COLORS} from './src/constants';
 import {OnBoarding, Login, Register} from './src/screens';
 import routes from './src/routes';
+import Tabs from './src/Navigation/Tabs';
 
 const Stack = createStackNavigator();
 const theme = {
@@ -30,7 +31,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer theme={theme}>
-        <Stack.Navigator initialRouteName={routes.ON_BOARDING}>
+        <Stack.Navigator initialRouteName={routes.HOME}>
+          <Stack.Screen name={routes.HOME} component={Tabs} />
           <Stack.Screen
             name={routes.ON_BOARDING}
             component={OnBoarding}

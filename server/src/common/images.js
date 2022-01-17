@@ -1,25 +1,36 @@
 var axios = require("axios");
 const config = require("../config/config.json");
+const cloudinary = require("cloudinary").v2;
+const logger = require("./logger")(__filename);
 
-module.exports.uploadFile = async (file) => {
-  let response = {};
+const { cloud_name, api_key, api_secret } = config;
+
+cloudinary.config({
+  cloud_name,
+  api_key,
+  api_secret,
+});
+
+const basePath = "foodDelivery";
+
+module.exports.uploadFile = async (image, scale = true) => {
+  // Log the function name and the data
+  logger.info(`uploadImage  image.length: ${image.length}, scale: ${scale}`);
+
   try {
-    let image = file.toString("base64");
-    let data = {
-      image,
-      type: "base64",
-      name: "myfile.png",
-      title: "testing image",
+    const options = {
+      public_id: `${basePath}`,
     };
-    let res = await axios.post("https://api.imgur.com/3/image", data, {
-      headers: { Authorization: `Client-ID ${config.Client_ID}` },
-    });
-    const { id, link } = res.data.data;
-    response.avatar = link;
-    response.avatarId = id;
-    return response;
-  } catch (error) {
-    console.log(error.message);
+    if (scale) {
+      options.width = 350;
+      options.crop = "scale";
+    }
+    console.log(image);
+    return await cloudinary.uploader.upload(image, options);
+  } catch (e) {
+    // Catch error and log it
+    logger.error(e.message);
+    // Send to client that server error occured
     return null;
   }
 };

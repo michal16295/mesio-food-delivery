@@ -1,7 +1,9 @@
 {
   "port": 8080,
   "jwtPrivateKey": "dsjvndsjvdsnvkjdsnnvsdkv",
-  "Client_ID": "352763943198558",
+  "cloud_name": "photocloudmichal",
+  "api_key": "352763943198558",
+  "api_secret": "ty5KA-fgxaHjrI22NxwDFqY6ARI",
   "development": {
     "username": "postgres",
     "password": "5210521",
