@@ -32,7 +32,11 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer theme={theme}>
         <Stack.Navigator initialRouteName={routes.HOME}>
-          <Stack.Screen name={routes.HOME} component={Tabs} />
+          <Stack.Screen
+            name={routes.HOME}
+            component={Tabs}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name={routes.ON_BOARDING}
             component={OnBoarding}
