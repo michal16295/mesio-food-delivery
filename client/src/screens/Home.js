@@ -4,11 +4,11 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, SIZES, FONTS, ICONS, images} from '../constants';
 
 import routes from '../routes';
-import {Button, Input, CheckBox} from '../components/Form';
+import {Search} from '../components/Form';
 
 const Home = ({navigation}) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <View style={styles.heading}>
         <View>
           <Text style={{...FONTS.h2}}>Hello</Text>
@@ -21,12 +21,19 @@ const Home = ({navigation}) => {
           />
         </View>
       </View>
+      <View style={{paddingHorizontal: 20}}>
+        <Search placeholder="Search..." />
+      </View>
     </SafeAreaView>
   );
 };
 export default Home;
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flex: 1,
+  },
   heading: {
     display: 'flex',
     flexDirection: 'row',
