@@ -7,7 +7,11 @@ import routes from '../routes';
 import {Button, Input, CheckBox} from '../components/Form';
 
 const Home = ({navigation}) => {
-  return <SafeAreaView></SafeAreaView>;
+  return (
+    <SafeAreaView>
+      <Text>sdvcdsvd</Text>
+    </SafeAreaView>
+  );
 };
 export default Home;
 
