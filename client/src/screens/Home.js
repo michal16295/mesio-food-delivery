@@ -5,6 +5,7 @@ import {COLORS, SIZES, FONTS, ICONS, images} from '../constants';
 
 import routes from '../routes';
 import {Search} from '../components/Form';
+import {Categories} from '../components/Home';
 
 const Home = ({navigation}) => {
   return (
@@ -24,6 +25,7 @@ const Home = ({navigation}) => {
       <View style={{paddingHorizontal: 20}}>
         <Search placeholder="Search..." />
       </View>
+      <Categories />
     </SafeAreaView>
   );
 };

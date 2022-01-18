@@ -33,7 +33,7 @@ export const SIZES = {
   largeTitle: 50,
   h1: 22,
   h2: 20,
-  h3: 20,
+  h3: 18,
   h4: 19,
   body1: 16,
   body2: 16,
@@ -49,6 +49,7 @@ export const SIZES = {
 export const FONTS = {
   h1: {fontFamily: 'Poppins-Bold', fontSize: SIZES.h1, lineHeight: 34},
   h2: {fontFamily: 'Poppins-Bold', fontSize: SIZES.h2, lineHeight: 30},
+  h3: {fontFamily: 'Poppins-Medium', fontSize: SIZES.h3, lineHeight: 30},
   body1: {
     fontFamily: 'Poppins-Bold',
     fontSize: SIZES.body1,
