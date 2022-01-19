@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {View, Text, Image, StyleSheet, SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, SIZES, FONTS, ICONS, images} from '../constants';
 
@@ -53,23 +60,26 @@ const data = [
 const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.heading}>
-        <View>
-          <Text style={{...FONTS.h2}}>Hello</Text>
-          <Text style={{...FONTS.body2}}>Michal Barski</Text>
+      <ScrollView contentContainerStyle={{paddingBottom: 50}}>
+        <View style={styles.heading}>
+          <View>
+            <Text style={{...FONTS.h2}}>Hello</Text>
+            <Text style={{...FONTS.body2}}>Michal Barski</Text>
+          </View>
+          <View style={styles.cartIcon}>
+            <Image
+              source={ICONS.cart}
+              style={{tintColor: COLORS.primary, height: 20, width: 20}}
+            />
+          </View>
         </View>
-        <View style={styles.cartIcon}>
-          <Image
-            source={ICONS.cart}
-            style={{tintColor: COLORS.primary, height: 20, width: 20}}
-          />
+        <View style={{paddingHorizontal: 20}}>
+          <Search placeholder="Search..." />
         </View>
-      </View>
-      <View style={{paddingHorizontal: 20}}>
-        <Search placeholder="Search..." />
-      </View>
-      <Categories />
-      <List title="Most popular" data={data} />
+        <Categories />
+        <List title="Most popular" data={data} />
+        <List title="Newest" data={data} />
+      </ScrollView>
     </SafeAreaView>
   );
 };

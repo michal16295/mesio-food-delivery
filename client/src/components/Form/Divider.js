@@ -15,11 +15,11 @@ const Divider = () => {
         {dashes.map((_, index) => (
           <Rect
             key={index}
-            x="11"
+            x="5"
             y="10"
             width="10"
             height="1"
-            fill={COLORS.primary}
+            fill={COLORS.darkgray}
             translateX={spacing * index}
           />
         ))}
