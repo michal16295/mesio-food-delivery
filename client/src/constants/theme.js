@@ -73,12 +73,14 @@ export const FONTS = {
   caption1: {
     fontFamily: 'Poppins-Bold',
     fontSize: SIZES.body5,
-    lineHeight: 22,
   },
   caption2: {
     fontFamily: 'Poppins-Regular',
     fontSize: SIZES.body5,
-    lineHeight: 22,
+  },
+  caption3: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 10,
   },
   button: {
     fontFamily: 'Poppins-Medium',

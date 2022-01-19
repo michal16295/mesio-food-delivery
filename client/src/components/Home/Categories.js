@@ -114,7 +114,8 @@ export default Categories;
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 20,
+    paddingBottom: 10,
+    marginTop: 20,
   },
   heading: {
     display: 'flex',
@@ -142,7 +143,7 @@ const styles = StyleSheet.create({
     paddingBottom: SIZES.padding * 2,
     borderRadius: SIZES.radius,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     marginRight: SIZES.padding,
   },
   innerItem: {
