@@ -77,7 +77,7 @@ const Home = ({navigation}) => {
           <Search placeholder="Search..." />
         </View>
         <Categories />
-        <List title="Most popular" data={data} />
+        <List title="Most popular" data={data} navigation={navigation} />
         <List title="Newest" data={data} />
       </ScrollView>
     </SafeAreaView>

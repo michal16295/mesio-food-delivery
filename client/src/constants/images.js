@@ -11,8 +11,9 @@ const hotdog = require('../../assets/images/hotdog.png');
 const noodle = require('../../assets/images/noodle.png');
 const salad = require('../../assets/images/salad.png');
 const sushi = require('../../assets/images/sushi.png');
+const all = require('../../assets/images/rice-bowl.png');
 
-const burger_restaurant_2 = require('../../assets/images/burger-restaurant-2.jpg');
+const burger_restaurant_2 = require('../../assets/images/burger.jpg');
 const chicago_hot_dog = require('../../assets/images/chicago-hot-dog.jpg');
 const crispy_chicken_burger = require('../../assets/images/crispy-chicken-burger.jpg');
 const fries_restaurant = require('../../assets/images/fries-restaurant.jpg');
@@ -31,6 +32,7 @@ const pizza_restaurant = require('../../assets/images/pizza-restaurant.jpg');
 const sarawak_laksa = require('../../assets/images/sarawak-laksa.jpg');
 const sushi2 = require('../../assets/images/sushi.jpg');
 const teh_c_peng = require('../../assets/images/teh-c-peng.jpg');
+const rockCafeLogo = require('../../assets/images/Cafe_Logo.png');
 
 export default {
   welcome,
@@ -65,4 +67,6 @@ export default {
   sarawak_laksa,
   sushi2,
   teh_c_peng,
+  all,
+  rockCafeLogo,
 };

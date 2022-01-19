@@ -14,7 +14,7 @@ import {Provider} from 'react-redux';
 import store from './src/store';
 
 import {COLORS} from './src/constants';
-import {OnBoarding, Login, Register} from './src/screens';
+import {OnBoarding, Login, Register, Restaurant} from './src/screens';
 import routes from './src/routes';
 import Tabs from './src/Navigation/Tabs';
 
@@ -46,6 +46,15 @@ const App = () => {
             name={routes.LOGIN}
             component={Login}
             options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={routes.RESTAURANT}
+            component={Restaurant}
+            options={{
+              title: null,
+              headerTintColor: COLORS.black,
+              headerBackTitle: true,
+            }}
           />
           <Stack.Screen
             name={routes.REGISTER}

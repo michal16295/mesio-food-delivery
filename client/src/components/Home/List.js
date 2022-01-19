@@ -10,11 +10,14 @@ import {
 
 import {COLORS, FONTS, SIZES, images} from '../../constants';
 import {Divider} from '../Form';
+import routes from '../../routes';
 
-const List = ({data, title}) => {
+const List = ({data, title, navigation}) => {
   const renderItem = ({item}) => {
     return (
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => navigation.navigate(routes.RESTAURANT, {item})}>
         <View style={styles.innerItem}>
           <Image source={item.image} resizeMode="cover" style={styles.img} />
           <View style={styles.textContainer}>

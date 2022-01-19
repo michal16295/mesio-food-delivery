@@ -12,6 +12,12 @@ import {COLORS, FONTS, SIZES, images} from '../../constants';
 
 const data = [
   {
+    id: '0',
+    title: 'All',
+    image: images.all,
+    count: 10,
+  },
+  {
     id: '1',
     title: 'Pizza',
     image: images.pizza,
