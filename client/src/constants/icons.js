@@ -4,4 +4,6 @@ const order = require('../../assets/icons/order.png');
 const person = require('../../assets/icons/person.png');
 const search = require('../../assets/icons/search.png');
 const back = require('../../assets/icons/back.png');
-export default {home, person, order, cart, search, back};
+const star = require('../../assets/icons/star.png');
+
+export default {home, person, order, cart, search, back, star};

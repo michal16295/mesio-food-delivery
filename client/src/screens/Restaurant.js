@@ -11,7 +11,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS, SIZES, FONTS, ICONS, images} from '../constants';
 
 import routes from '../routes';
-import {Header} from '../components/Restaurant';
+import {Stars} from '../components/Form';
 import Svg, {Path} from 'react-native-svg';
 
 const Restaurant = ({route, navigation}) => {
@@ -32,6 +32,7 @@ const Restaurant = ({route, navigation}) => {
         <Text style={{...FONTS.h2, textAlign: 'center', marginTop: 55}}>
           {item.title}
         </Text>
+        <Stars total={4} />
       </View>
     </SafeAreaView>
   );
