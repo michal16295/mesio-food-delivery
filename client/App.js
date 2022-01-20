@@ -14,7 +14,13 @@ import {Provider} from 'react-redux';
 import store from './src/store';
 
 import {COLORS} from './src/constants';
-import {OnBoarding, Login, Register, Restaurant} from './src/screens';
+import {
+  OnBoarding,
+  Login,
+  Register,
+  Restaurant,
+  RestaurantsList,
+} from './src/screens';
 import routes from './src/routes';
 import Tabs from './src/Navigation/Tabs';
 
@@ -48,12 +54,20 @@ const App = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen
+            name={routes.RESTAURANTS}
+            component={RestaurantsList}
+            options={{headerShown: true}}
+          />
+          <Stack.Screen
             name={routes.RESTAURANT}
             component={Restaurant}
             options={{
               title: null,
               headerTintColor: COLORS.black,
               headerBackTitle: true,
+              headerStyle: {
+                backgroundColor: COLORS.mediumGray,
+              },
             }}
           />
           <Stack.Screen
@@ -63,6 +77,9 @@ const App = () => {
               title: 'Sign Up',
               headerTintColor: COLORS.black,
               headerBackTitle: true,
+              headerStyle: {
+                backgroundColor: COLORS.mediumGray,
+              },
             }}
           />
         </Stack.Navigator>

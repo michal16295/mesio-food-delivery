@@ -4,6 +4,7 @@ const routes = {
   LOGIN: 'Login',
   REGISTER: 'Register',
   RESTAURANT: 'Restaurant',
+  RESTAURANTS: 'Restaurants',
 };
 
 export default routes;

@@ -14,30 +14,15 @@ import routes from '../routes';
 import {Stars} from '../components/Form';
 import Svg, {Path} from 'react-native-svg';
 
-const Restaurant = ({route, navigation}) => {
+const RestaurantsList = ({route, navigation}) => {
   const {item} = route.params;
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.inner}>
-        <View style={styles.imgContianer}>
-          <Image style={styles.img} source={item.image} resizeMode="cover" />
-          <View style={styles.circle}>
-            <Image
-              source={images.rockCafeLogo}
-              resizeMode="contain"
-              style={{width: 100}}
-            />
-          </View>
-        </View>
-        <Text style={{...FONTS.h2, textAlign: 'center', marginTop: 55}}>
-          {item.title}
-        </Text>
-        <Stars total={4} />
-      </View>
+      <Text>dsvvdsvds</Text>
     </SafeAreaView>
   );
 };
-export default Restaurant;
+export default RestaurantsList;
 
 const styles = StyleSheet.create({
   container: {
