@@ -33,6 +33,15 @@ const theme = {
   },
 };
 
+const options = {
+  title: null,
+  headerTintColor: COLORS.black,
+  headerBackTitle: true,
+  headerStyle: {
+    backgroundColor: COLORS.mediumGray,
+  },
+};
+
 const App = () => {
   return (
     <Provider store={store}>
@@ -56,30 +65,19 @@ const App = () => {
           <Stack.Screen
             name={routes.RESTAURANTS}
             component={RestaurantsList}
-            options={{headerShown: true}}
+            options={options}
           />
           <Stack.Screen
             name={routes.RESTAURANT}
             component={Restaurant}
-            options={{
-              title: null,
-              headerTintColor: COLORS.black,
-              headerBackTitle: true,
-              headerStyle: {
-                backgroundColor: COLORS.mediumGray,
-              },
-            }}
+            options={options}
           />
           <Stack.Screen
             name={routes.REGISTER}
             component={Register}
             options={{
               title: 'Sign Up',
-              headerTintColor: COLORS.black,
-              headerBackTitle: true,
-              headerStyle: {
-                backgroundColor: COLORS.mediumGray,
-              },
+              ...options,
             }}
           />
         </Stack.Navigator>

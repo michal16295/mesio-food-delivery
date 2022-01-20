@@ -12,7 +12,7 @@ import {COLORS, FONTS, SIZES, images} from '../../constants';
 import {Divider} from '../Form';
 import routes from '../../routes';
 
-const List = ({data, title, navigation}) => {
+const List = ({data, title, orderBy, navigation}) => {
   const renderItem = ({item}) => {
     return (
       <TouchableOpacity
@@ -64,7 +64,14 @@ const List = ({data, title, navigation}) => {
     <View style={styles.container}>
       <View style={styles.heading}>
         <Text style={{...FONTS.h3}}>{title}</Text>
-        <TouchableOpacity style={styles.moreBtn}>
+        <TouchableOpacity
+          style={styles.moreBtn}
+          onPress={() =>
+            navigation.navigate(routes.RESTAURANTS, {
+              title,
+              orderBy,
+            })
+          }>
           <Text style={{color: COLORS.white}}>See All</Text>
         </TouchableOpacity>
       </View>
@@ -118,7 +125,6 @@ const styles = StyleSheet.create({
   },
   innerItem: {
     width: SIZES.width * 0.5,
-
     borderRadius: 10,
     backgroundColor: COLORS.lightGray,
     justifyContent: 'space-between',

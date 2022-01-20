@@ -15,10 +15,10 @@ import {Stars} from '../components/Form';
 import Svg, {Path} from 'react-native-svg';
 
 const RestaurantsList = ({route, navigation}) => {
-  const {item} = route.params;
+  const {title, orderBy} = route.params;
   return (
     <SafeAreaView style={styles.container}>
-      <Text>dsvvdsvds</Text>
+      <Text>{title}</Text>
     </SafeAreaView>
   );
 };

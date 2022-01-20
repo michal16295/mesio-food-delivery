@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {COLORS, SIZES, FONTS, ICONS, images} from '../constants';
+import {COLORS, SIZES, FONTS, ICONS, images, DbConst} from '../constants';
 
 import routes from '../routes';
 import {Search} from '../components/Form';
@@ -77,8 +77,13 @@ const Home = ({navigation}) => {
           <Search placeholder="Search..." />
         </View>
         <Categories />
-        <List title="Most popular" data={data} navigation={navigation} />
-        <List title="Newest" data={data} />
+        <List
+          title="Most popular"
+          data={data}
+          navigation={navigation}
+          orderBy={DbConst.POPULAR}
+        />
+        <List title="Newest" data={data} orderBy={DbConst.NEW} />
       </ScrollView>
     </SafeAreaView>
   );
