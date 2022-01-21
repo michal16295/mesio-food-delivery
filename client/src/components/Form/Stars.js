@@ -4,7 +4,7 @@ import {ICONS, COLORS} from '../../constants';
 
 const MAX = 5;
 
-const Stars = ({total = 1}) => {
+const Stars = ({total = 1, size = 20}) => {
   const getStarts = () => {
     let list = [];
 
@@ -12,20 +12,19 @@ const Stars = ({total = 1}) => {
       list.push(
         <Image
           source={ICONS.star}
+          resizeMode="contain"
           key={i.toString()}
-          style={{tintColor: i >= total ? COLORS.darkgray : COLORS.yellow}}
+          style={{
+            tintColor: i >= total ? COLORS.darkgray : COLORS.yellow,
+            width: size,
+          }}
         />,
       );
     }
     return list;
   };
 
-  return (
-    <View style={styles.container}>
-      {getStarts()}
-      <Text>(20+)</Text>
-    </View>
-  );
+  return <View style={styles.container}>{getStarts()}</View>;
 };
 export default Stars;
 

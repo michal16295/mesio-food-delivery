@@ -70,6 +70,7 @@ const List = ({data, title, orderBy, navigation}) => {
             navigation.navigate(routes.RESTAURANTS, {
               title,
               orderBy,
+              data,
             })
           }>
           <Text style={{color: COLORS.white}}>See All</Text>

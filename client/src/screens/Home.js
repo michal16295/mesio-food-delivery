@@ -22,6 +22,7 @@ const data = [
     categotyId: 'Burger',
     delivery: '10.00',
     time: '20-30',
+    rating: 3,
   },
   {
     id: '2',
@@ -30,6 +31,7 @@ const data = [
     categotyId: 'Pizza',
     delivery: '12.00',
     time: '60',
+    rating: 4,
   },
   {
     id: '3',
@@ -38,6 +40,7 @@ const data = [
     categotyId: 'Sushi',
     delivery: 'FREE',
     time: '30-40',
+    rating: 5,
   },
   {
     id: '4',
@@ -46,6 +49,7 @@ const data = [
     categotyId: 'Burger',
     delivery: '15.00',
     time: '15-20',
+    rating: 3,
   },
   {
     id: '5',
@@ -54,6 +58,7 @@ const data = [
     categotyId: 'Noodel',
     delivery: 'FREE',
     time: '15-20',
+    rating: 5,
   },
 ];
 
