@@ -6,7 +6,7 @@ import {COLORS} from '../../constants';
 
 const Divider = () => {
   const {width} = Dimensions.get('screen');
-  const spacing = 8;
+  const spacing = 5;
 
   const dashes = new Array(Math.floor(width / spacing)).fill(null);
   return (
@@ -17,8 +17,8 @@ const Divider = () => {
             key={index}
             x="2"
             y="10"
-            width="5"
-            height="1"
+            width="2"
+            height="0.5"
             fill={COLORS.darkgray}
             translateX={spacing * index}
           />

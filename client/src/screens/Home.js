@@ -88,7 +88,12 @@ const Home = ({navigation}) => {
           navigation={navigation}
           orderBy={DbConst.POPULAR}
         />
-        <List title="Newest" data={data} orderBy={DbConst.NEW} />
+        <List
+          title="Newest"
+          data={data}
+          orderBy={DbConst.NEW}
+          navigation={navigation}
+        />
       </ScrollView>
     </SafeAreaView>
   );
